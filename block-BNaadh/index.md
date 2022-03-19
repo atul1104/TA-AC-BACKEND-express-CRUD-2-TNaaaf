@@ -1,4 +1,4 @@
-writeCode
+writeCode.
 
 Q. write express generator command with varying options to generate express app with following features:
 
