@@ -21,10 +21,16 @@ router.get('/new', (req, res) => {
 //fetch single article
 router.get('/:id', (req, res, next) => {
   var id = req.params.id;
-  Article.findById(id, (err, article) => {
-    if (err) return next(err);
-    res.render('articleDetails', { article });
-  });
+  // Article.findById(id, (err, article) => {
+  //   if (err) return next(err);
+  //   res.render('articleDetails', { article });
+  // });
+  Article.findById(id)
+    .populate('comments')
+    .exec((err, article) => {
+      if (err) return next(err);
+      res.render('articleDetails', { article });
+    });
 });
 
 //create article
@@ -61,7 +67,10 @@ router.get('/:id/delete', (req, res, next) => {
   var id = req.params.id;
   Article.findByIdAndDelete(id, (err, deletedArticle) => {
     if (err) return next(err);
-    res.redirect('/articles');
+    Comment.remove({ articleId: deletedArticle.id }, (err) => {
+      if (err) return next(err);
+      res.redirect('/articles');
+    });
   });
 });
 
