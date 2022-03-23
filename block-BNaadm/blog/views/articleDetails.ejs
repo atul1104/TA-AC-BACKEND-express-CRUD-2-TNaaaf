@@ -38,5 +38,17 @@
         <input class="form-control" type="submit" placeholder="Add Comment" />
       </form>
     </div>
+    <div class="comment-section">
+      <h3>Comments</h3>
+      <hr />
+      <% article.comments.forEach(comment => { %>
+      <div>
+        <p class="comment"><%= comment.text %></p>
+        <p class="author"><%= comment.author %></p>
+        <a href="/comments/<%=comment.id%>/edit"><button>Edit</button></a>
+        <a href="/comments/<%=comment.id%>/delete"><button>Delete</button></a>
+      </div>
+      <% }) %>
+    </div>
   </body>
 </html>
