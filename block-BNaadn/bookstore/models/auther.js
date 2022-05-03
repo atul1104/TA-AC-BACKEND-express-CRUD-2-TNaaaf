@@ -9,6 +9,6 @@ let authorSchema = new Schema({
   bookId: [{ type: Schema.Types.ObjectId, ref: 'Book' }],
 });
 
-let Author = mongoose.model('Author', authorSchema);
+let Auther = mongoose.model('Auther', authorSchema);
 
-module.exports = Author;
+module.exports = Auther;

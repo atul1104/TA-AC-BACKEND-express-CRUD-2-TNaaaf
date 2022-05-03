@@ -1,5 +1,5 @@
 let express = require('express');
-const Author = require('../models/author');
+const Auther = require('../models/auther');
 let Book = require('../models/book');
 let Category = require('../models/category');
 
@@ -19,9 +19,9 @@ router.post('/', (req, res, next) => {
     }
     let bookId = newBook.id;
     req.body.bookId = bookId;
-    Author.findOne({ name: req.body.name }, (err, author) => {
+    Auther.findOne({ name: req.body.name }, (err, author) => {
       if (author) {
-        Author.findOneAndUpdate(
+        Auther.findOneAndUpdate(
           { name: req.body.name },
           { $push: { bookId: req.body.bookId } },
           (err, author) => {
@@ -38,7 +38,7 @@ router.post('/', (req, res, next) => {
           }
         );
       } else {
-        Author.create(req.body, (err, newAuthor) => {
+        Auther.create(req.body, (err, newAuthor) => {
           if (err) {
             return next(err);
           }
