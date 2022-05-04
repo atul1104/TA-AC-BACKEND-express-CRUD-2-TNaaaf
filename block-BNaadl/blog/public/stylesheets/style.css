@@ -1,0 +1,53 @@
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: aquamarine;
+}
+h1 {
+  text-align: center;
+  color: crimson;
+  font-size: 2rem;
+}
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.article-title {
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+}
+
+a {
+  font-size: 1rem;
+  color: black;
+  background-color: brown;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  /* margin-left: 34.5rem; */
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+}
+form {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid black;
+  padding: 1rem;
+}
+.form-control {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+button {
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
